@@ -13,6 +13,7 @@ import java.util.List;
  *
  * @author xuxueli 2017-07-28 22:14:52
  */
+@SuppressWarnings("unchecked")
 public class AdminBizClient implements AdminBiz {
 
     public AdminBizClient() {
@@ -32,7 +33,8 @@ public class AdminBizClient implements AdminBiz {
     private int timeout = 3;
 
 
-    @Override
+    
+	@Override
     public ReturnT<String> callback(List<HandleCallbackParam> callbackParamList) {
         return XxlJobRemotingUtil.postBody(addressUrl+"api/callback", accessToken, timeout, callbackParamList, String.class);
     }

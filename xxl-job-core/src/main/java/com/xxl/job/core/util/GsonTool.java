@@ -1,13 +1,12 @@
 package com.xxl.job.core.util;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
-
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 /**
  * @author xuxueli 2020-04-11 20:56:31
@@ -48,10 +47,12 @@ public class GsonTool {
      * @param argClassOfT
      * @return
      */
-    public static <T> T fromJson(String json, Class<T> classOfT, Class argClassOfT) {
+    @SuppressWarnings("rawtypes")
+	public static <T> T fromJson(String json, Class<T> classOfT, Class argClassOfT) {
         Type type = new ParameterizedType4ReturnT(classOfT, new Class[]{argClassOfT});
         return gson.fromJson(json, type);
     }
+    @SuppressWarnings("rawtypes")
     public static class ParameterizedType4ReturnT implements ParameterizedType {
         private final Class raw;
         private final Type[] args;

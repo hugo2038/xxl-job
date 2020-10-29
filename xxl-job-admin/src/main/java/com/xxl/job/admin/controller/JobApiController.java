@@ -35,7 +35,8 @@ public class JobApiController {
      * @param data
      * @return
      */
-    @RequestMapping("/{uri}")
+    @SuppressWarnings("unchecked")
+	@RequestMapping("/{uri}")
     @ResponseBody
     @PermissionLimit(limit=false)
     public ReturnT<String> api(HttpServletRequest request, @PathVariable("uri") String uri, @RequestBody(required = false) String data) {

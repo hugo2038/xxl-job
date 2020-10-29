@@ -24,7 +24,8 @@ public class MethodJobHandler extends IJobHandler {
         this.destroyMethod =destroyMethod;
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public ReturnT<String> execute(String param) throws Exception {
         return (ReturnT<String>) method.invoke(target, new Object[]{param});
     }

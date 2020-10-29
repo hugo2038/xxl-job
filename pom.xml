@@ -45,11 +45,6 @@
 		<maven-war-plugin.version>3.2.3</maven-war-plugin.version>
 	</properties>
 
-	<build>
-		<plugins>
-		</plugins>
-	</build>
-
 
 	<licenses>
 		<license>
